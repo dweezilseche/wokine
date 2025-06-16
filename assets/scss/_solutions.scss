@@ -1,0 +1,219 @@
+.solutions {
+  padding: 80px 0;
+  background: $light-blue;
+  border-radius: $radius;
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 80px 0 1.3rem 0;
+  }
+
+  .svg-bg {
+    position: absolute;
+    inset: 0; // top/right/bottom/left: 0
+    z-index: 0;
+    pointer-events: none; // évite que les SVG bloquent les clics
+
+    .shape {
+      position: absolute;
+    }
+
+    .shape-2 {
+      right: -20px;
+    }
+
+    .shape-3 {
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  .container {
+    h3 {
+      font-size: 48px;
+      text-align: center;
+      line-height: 120%;
+      width: 90%;
+      background: $text-gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 0 auto 60px auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .line {
+      background: $text-gradient;
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .split-scroll {
+      opacity: 1 !important;
+    }
+
+    .split-scroll * {
+      will-change: transform;
+    }
+
+    .split-article {
+      opacity: 1 !important;
+    }
+
+    .split-article * {
+      will-change: transform;
+    }
+
+    .editorial-cards__grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(16, 1fr);
+      gap: 16px;
+
+      article {
+        border-radius: $card-radius;
+        padding: 40px;
+        grid-column: span 12;
+        min-height: 275px;
+        position: relative;
+
+        @media (min-width: 768px) {
+          &.card--large {
+            grid-column: span 16;
+          }
+          &.card--image,
+          &.card--pink {
+            grid-column: span 8;
+          }
+        }
+
+        @media (max-width: 768px) {
+          &.card--large,
+          &.card--image,
+          &.card--pink {
+            grid-column: span 16;
+          }
+        }
+
+        .card__content {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 100%;
+        }
+
+        a {
+          color: $white;
+          font-size: 16px;
+          text-decoration: none;
+          font-weight: 700;
+          border-bottom: 1px solid $white;
+          padding: 4px 0;
+          // position: absolute;
+          // bottom: 40px;
+          // left: 40px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: space-between;
+          z-index: 1;
+          width: 80px;
+          flex-shrink: 0;
+
+          svg {
+            stroke: $white;
+          }
+        }
+
+        h4 {
+          font-size: 32px;
+          line-height: 120%;
+        }
+      }
+    }
+
+    article:nth-child(2)::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000e2b80;
+      z-index: 0;
+    }
+
+    .card--large {
+      background-color: $dark-blue;
+      color: $white;
+
+      .card__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+
+        @media (max-width: 760px) {
+          gap: 48px;
+        }
+
+        .infos-card {
+          display: flex;
+          gap: 40px;
+
+          @media (max-width: 768px) {
+            flex-direction: column;
+          }
+
+          h4 {
+            font-size: 52px;
+            font-weight: 400;
+            font-family: "Anton", sans-serif;
+            text-transform: uppercase;
+            line-height: 110%;
+            letter-spacing: -4%;
+            flex: 1;
+
+            @media (max-width: 768px) {
+              width: 50%;
+            }
+          }
+
+          p {
+            flex: 2;
+          }
+        }
+      }
+    }
+
+    .card--pink {
+      background-color: $pink;
+      color: $dark-blue;
+
+      a {
+        color: $dark-blue !important;
+        border-bottom: 1px solid $dark-blue !important;
+
+        svg {
+          stroke: $dark-blue !important;
+        }
+      }
+    }
+
+    .card--image {
+      background-size: cover;
+      background-position: center;
+      color: $white;
+      position: relative;
+      overflow: hidden;
+
+      .card__content {
+        position: relative;
+        height: 100%;
+        z-index: 1;
+      }
+    }
+  }
+}

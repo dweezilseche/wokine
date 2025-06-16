@@ -1,0 +1,60 @@
+.hero {
+  background: url("../images/hero.png") center/cover no-repeat;
+  height: 100vh;
+  color: $white;
+  text-align: center;
+  border-radius: $radius;
+  overflow: hidden;
+  position: relative;
+
+  @media (max-width: 1024px) {
+    height: 100dvh;
+  }
+
+  .container {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+
+    @media (max-width: 768px) {
+      gap: 32px;
+    }
+  }
+
+  .hero__logo {
+    img {
+      width: 80px;
+    }
+  }
+
+  .hero__title {
+    font-size: 64px;
+    letter-spacing: -2%;
+    font-weight: 900;
+    line-height: 100%;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+  }
+
+  .hero-animation {
+    opacity: 0;
+    will-change: transform;
+  }
+
+  .hero-animation * {
+    will-change: transform;
+  }
+
+  .hero__overlay {
+    background: #000e2b80;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    border-radius: 24px;
+  }
+}

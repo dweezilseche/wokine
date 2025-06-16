@@ -1,0 +1,100 @@
+@mixin generate-columns($columns, $prefix: "") {
+  @for $span from 1 through $columns {
+    @for $start from 1 through ($columns - $span + 1) {
+      .#{$prefix}col-#{$span}-start-#{$start} {
+        grid-column: #{$start} / span #{$span};
+      }
+    }
+  }
+}
+
+// Conteneur principal desktop (48 colonnes)
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(48, 1fr);
+}
+@include generate-columns(48);
+
+// Responsive big screen(48 colonnes)
+@media (min-width: 1440px) {
+  .grid-container {
+    grid-template-columns: repeat(48, 1fr);
+  }
+
+  @include generate-columns(48, "xxl-");
+}
+
+// Responsive desktop (48 colonnes)
+@media (max-width: 1440px) {
+  .grid-container {
+    grid-template-columns: repeat(48, 1fr);
+  }
+
+  @include generate-columns(48, "xl-");
+}
+
+// Responsive petit laptop (48 colonnes)
+@media (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(48, 1fr);
+  }
+
+  @include generate-columns(48, "lg-");
+}
+
+// Responsive tablette (32 colonnes)
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(32, 1fr);
+  }
+
+  @include generate-columns(32, "md-");
+}
+
+// Responsive mobile (24 colonnes)
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: repeat(24, 1fr);
+  }
+
+  @include generate-columns(24, "sm-");
+}
+
+//border view
+$border-solid: 1px solid red;
+
+//grid canva desktop
+.grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  display: grid;
+  grid-template-columns: repeat(48, 1fr);
+
+  &::before {
+    content: "";
+    display: contents;
+  }
+
+  div {
+    border-right: 1px solid #00e1ff51;
+    height: 100vh;
+  }
+
+  // div:nth-child(even) {
+  //   background-color: rgba(0, 187, 255, 0.15);
+  // }
+}
+
+// Génère 48 colonnes
+.grid-overlay {
+  @for $i from 1 through 48 {
+    div:nth-child(#{$i}) {
+      grid-column: #{$i};
+    }
+  }
+}

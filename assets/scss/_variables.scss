@@ -1,0 +1,25 @@
+//colors
+$white: #ffffff;
+$dark-blue: #000e2b;
+$light-blue: #ebf2f6;
+$blue-btn: #0c4b78;
+$text-grey: #3d4450;
+$pink: #e98ce3;
+$text-gradient: linear-gradient(90deg, #000e2b 0%, #02399f 41%, #000e2b 100%);
+
+//border
+$radius: 24px;
+$card-radius: 16px;
+$btn-radius: 33px;
+
+//breakpoints
+$breakpoints: (
+  // mobile
+  "sm": 480px,
+  // tablette
+  "md": 768px,
+  // petit laptop
+  "lg": 1024px,
+  // grand écran
+  "xl": 1440px
+);

@@ -1,0 +1,233 @@
+$margin-desktop: 112px;
+$margin-laptop: 80px;
+$margin-mobile: 32px;
+
+.products-highlight {
+  background: $light-blue;
+  padding: 80px 0 112px 0;
+  border-radius: 24px;
+  position: relative;
+  margin-top: 12px;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 64px 0 112px 0;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+  }
+
+  &__header {
+    width: 100%;
+    padding-left: $margin-desktop;
+    padding-right: $margin-desktop;
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 1024px) {
+      padding-left: $margin-laptop;
+      padding-right: $margin-laptop;
+    }
+
+    @media (max-width: 768px) {
+      padding-left: $margin-mobile;
+      padding-right: $margin-mobile;
+    }
+
+    .products-highlight__title {
+      font-size: 40px;
+      font-weight: bold;
+    }
+
+    .split-scroll {
+      opacity: 1 !important;
+    }
+
+    .split-scroll * {
+      will-change: transform;
+    }
+
+    @media (max-width: 768px) {
+      width: 80%;
+    }
+
+    .products-highlight__cta {
+      background: $blue-btn;
+      color: white;
+      height: 54px;
+      padding: 16px 28px;
+      border-radius: $btn-radius;
+      background: $blue-btn;
+      color: $white;
+      font-family: "Satoshi", sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 22px;
+      border: none;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+
+      @media (max-width: 1024px) {
+        width: 180px;
+      }
+
+      @media (max-width: 768px) {
+        position: absolute;
+        bottom: 56px;
+      }
+    }
+  }
+}
+
+.products-carousel {
+  position: relative;
+
+  .carousel-wrapper {
+    display: flex;
+    gap: 12px;
+    padding: 0 24px 24px 0;
+    position: relative;
+    width: 100%;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-left: $margin-desktop;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+
+    @media (max-width: 1024px) {
+      padding-left: $margin-laptop;
+    }
+
+    @media (max-width: 768px) {
+      padding-left: $margin-mobile;
+    }
+
+    .product-card {
+      flex: 0 0 calc((100% / 5));
+      scroll-snap-align: start;
+      position: relative;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      @media (max-width: 1024px) {
+        flex: 0 0 calc((100% / 3.5));
+      }
+
+      @media (max-width: 768px) {
+        flex: 0 0 calc((100% / 2.5));
+      }
+
+      @media (max-width: 480px) {
+        flex: 0 0 calc((100% / 1.5));
+      }
+
+      .img-product {
+        background: $white;
+        aspect-ratio: 1 / 1;
+        border-radius: 16px;
+        overflow: hidden;
+        min-height: 260px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 100%;
+          border-radius: 8px;
+          transition: transform 1.5s cubic-bezier(0.06, 0.645, 0, 0.985);
+        }
+
+        .badge {
+          position: absolute;
+          top: 16px;
+          left: 16px;
+          background: $pink;
+          color: $dark-blue;
+          padding: 4px 10px;
+          font-size: 10px;
+          border-radius: 999px;
+          font-weight: 700;
+        }
+      }
+
+      .product-description {
+        padding: 16px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      &__title {
+        font-size: 16px;
+        font-weight: bold;
+        color: $dark-blue;
+      }
+
+      &__desc {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 130%;
+        opacity: 0.7;
+        color: $text-grey;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      &:hover img {
+        transform: scale(1.06);
+      }
+    }
+  }
+
+  .carousel-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.carousel-buttons {
+  position: absolute;
+  bottom: 80px;
+  right: 56px;
+  display: flex;
+  gap: 16px;
+
+  @media (max-width: 768px) {
+    top: 144px;
+    right: $margin-mobile;
+    height: 20px;
+  }
+
+  @media (max-width: 480px) {
+    top: 212px;
+    right: $margin-mobile;
+    height: 20px;
+  }
+
+  .carousel-nav {
+    cursor: pointer;
+    stroke: #000e2b;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+
+    &.dimmed {
+      opacity: 0.6 !important;
+    }
+
+    &.prev {
+      opacity: 1;
+    }
+
+    &.full {
+      opacity: 1 !important;
+    }
+  }
+}

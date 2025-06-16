@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header,
+main,
+section,
+footer {
+  width: 100%;
+}
+
+body {
+  padding: 6px;
+  background: $white;
+  font-family: "Satoshi", sans-serif;
+  display: grid;
+  grid-template-columns: repeat(48, 1fr);
+
+  main {
+    display: grid;
+    grid-column: span 48;
+  }
+}

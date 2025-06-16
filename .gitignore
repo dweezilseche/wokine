@@ -1,0 +1,15 @@
+# Ne versionne pas les fichiers système
+.DS_Store
+Thumbs.db
+
+# Node, si tu utilises un bundler
+node_modules/
+dist/
+*.log
+
+# Cache/OS
+.sass-cache/
+*.tmp
+
+# fichiers perso (remplace si besoin)
+.env
