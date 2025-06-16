@@ -1,0 +1,28 @@
+{
+  "name": "mytheme",
+  "version": "1.0.0",
+  "description": "## Objectif",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && cp dist/.vite/manifest.json dist/manifest.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dweezilseche/wokine.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dweezilseche/wokine/issues"
+  },
+  "homepage": "https://github.com/dweezilseche/wokine#readme",
+  "devDependencies": {
+    "sass": "^1.89.2",
+    "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "gsap": "^3.13.0"
+  }
+}

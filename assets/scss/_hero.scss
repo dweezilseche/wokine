@@ -1,5 +1,7 @@
 .hero {
-  background: url("../images/hero.png") center/cover no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 100vh;
   color: $white;
   text-align: center;

@@ -2,48 +2,19 @@
 // Chargement des scripts GSAP + assets principaux du thème
 
 function mon_theme_assets() {
-    // CSS principal
-    wp_enqueue_style(
-        'theme-style',
-        get_template_directory_uri() . '/assets/css/style.css'
-    );
+    // CSS
+    $css_file = vite_css('assets/js/main.js');
+    if ($css_file) {
+        wp_enqueue_style('theme-style', $css_file, [], null);
+    }
 
-    // GSAP core
-    wp_enqueue_script(
-        'gsap-js',
-        'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js',
-        array(),
-        '3.13.0',
-        true
-    );
+    // JS
+    $js_file = vite_asset('assets/js/main.js');
+    if ($js_file) {
+        wp_enqueue_script('theme-js', $js_file, [], null, true);
+    }
 
-    // ScrollTrigger 
-    wp_enqueue_script(
-        'gsap-st',
-        'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js',
-        array('gsap-js'),
-        '3.13.0',
-        true
-    );
-    // SplitText
-    wp_enqueue_script(
-        'gsap-splittext',
-        'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js',
-        array('gsap-js'),
-        '3.13.0',
-        true
-    );
-
-    // Custom JS
-    wp_enqueue_script(
-        'gsap-custom',
-        get_template_directory_uri() . '/assets/js/animations.js',
-        array('gsap-js', 'gsap-st', 'gsap-splittext'),
-        null,
-        true
-    );
-
-    // Carousel
+    // Autres scripts éventuels
     wp_enqueue_script(
         'carousel',
         get_template_directory_uri() . '/assets/js/carousel.js',
@@ -53,6 +24,7 @@ function mon_theme_assets() {
     );
 }
 add_action('wp_enqueue_scripts', 'mon_theme_assets');
+
 
 // Support images et titres WordPress
 add_theme_support('post-thumbnails');
@@ -69,4 +41,42 @@ if (function_exists('acf_add_options_page')) {
         'redirect'    => false
     ]);
 }
+
+
+function vite_asset($entry) {
+    $manifest_path = get_template_directory() . '/dist/manifest.json';
+
+    if (!file_exists($manifest_path)) {
+        return null;
+    }
+
+    $manifest = json_decode(file_get_contents($manifest_path), true);
+
+    if (!isset($manifest[$entry])) {
+        return null;
+    }
+
+    return get_template_directory_uri() . '/dist/' . $manifest[$entry]['file'];
+}
+
+function vite_css($entry) {
+    $manifest_path = get_template_directory() . '/dist/manifest.json';
+
+    if (!file_exists($manifest_path)) {
+        return null;
+    }
+
+    $manifest = json_decode(file_get_contents($manifest_path), true);
+
+    if (!isset($manifest[$entry]['css'][0])) {
+        return null;
+    }
+
+    return get_template_directory_uri() . '/dist/' . $manifest[$entry]['css'][0];
+}
+
+
 ?>
+
+
+

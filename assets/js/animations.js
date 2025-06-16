@@ -207,6 +207,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
             });
           });
         });
+
+        const buttons = gsap.utils.toArray(".btn");
+        buttons.forEach((button) => {
+          let span = button.querySelector("span");
+          let tl = gsap.timeline({ paused: true });
+
+          tl.to(span, { duration: 0.2, yPercent: -100, ease: "cubic.out" });
+          tl.set(span, { yPercent: 100 });
+          tl.to(span, { duration: 0.2, yPercent: 0 });
+
+          button.addEventListener("mouseenter", () => tl.play(0));
+        });
       });
 
       console.log("window loaded");
