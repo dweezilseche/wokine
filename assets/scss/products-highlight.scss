@@ -153,6 +153,8 @@ $margin-mobile: 32px;
           font-size: 10px;
           border-radius: 999px;
           font-weight: 700;
+          z-index: 99;
+          backface-visibility: hidden;
         }
       }
 
