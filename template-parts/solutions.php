@@ -88,7 +88,7 @@
           </div>
           
           <a href="#" class="btn">
-            <?php echo esc_html($text_btn_first_bloc ?: 'Voir plus'); ?>
+            <span><?php echo esc_html($text_btn_first_bloc ?: 'Voir plus'); ?></span>
             <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M7.5 7.70509H7.5641M7.5641 7.70509L1 1.14099M7.5641 7.70509L1.41026 13.8589" stroke-width="2.0687"/>
             </svg>
@@ -114,7 +114,7 @@
             <?php echo esc_html($title_second_bloc ?: 'Sed sollicitudin malesuada gravida'); ?>
           </h4>
           <a href="#" class="btn">
-            <?php echo esc_html($text_btn_second_bloc ?: 'Voir plus'); ?>
+            <span><?php echo esc_html($text_btn_second_bloc ?: 'Voir plus'); ?></span>
             <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M7.5 7.70509H7.5641M7.5641 7.70509L1 1.14099M7.5641 7.70509L1.41026 13.8589" stroke-width="2.0687"/>
             </svg>

@@ -10,9 +10,9 @@ export function animateButtons() {
 
     const tl = gsap.timeline({ paused: true });
 
-    tl.to(span, { duration: 0.2, yPercent: -100, ease: "cubic.out" });
-    tl.set(span, { yPercent: 100 });
-    tl.to(span, { duration: 0.2, yPercent: 0 });
+    tl.to(span, { duration: 0.35, yPercent: -120, ease: "power2.in" });
+    tl.set(span, { yPercent: 120 });
+    tl.to(span, { duration: 0.35, yPercent: 0 });
 
     button.addEventListener("mouseenter", () => tl.play(0));
   });
