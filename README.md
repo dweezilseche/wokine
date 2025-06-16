@@ -15,7 +15,7 @@ Thème WordPress personnalisé à partir d'une maquette Figma pour test techniqu
 
 ## Choix & Processus
 
-- Structure de la page
+- Structure de la page :
   Pour réaliser ce test, j’ai dans un premier temps décliné la maquette desktop en versions mobile et tablette afin de mieux me projeter. Ensuite, j’ai commencé à intégrer la version desktop, section par section, en essayant d’être le plus fidèle possible aux maquettes. Mon device de référence étant de largeur 1440px x 900px.
   Pour cela, j’ai utilisé un système de grille CSS visant à reproduire les mêmes colonnes que celles présentes sur les maquettes : 48 colonnes sur desktop (reférence) et écrans larges, 32 colonnes sur tablette et 24 sur mobile.
 
@@ -26,12 +26,12 @@ Thème WordPress personnalisé à partir d'une maquette Figma pour test techniqu
 
   Les feuilles de style ont été développées en SCSS puis compilées. J’ai utilisé plusieurs variables pour enregistrer des valeurs récurrentes comme les tailles, marges, espacements ou couleurs.
 
-- Champs ACF
+- Champs ACF :
   C'était la première fois que je travaillais avec des champs ACF et j'ai trouvé que c'etait extrêmement pratique et simple d'utilisation. Je n'avais pas la version payante du plugin mais en utilisant une boucle j'ai pu simplement mettre en place mon carousel des produits highlights.
   Chaque champs possède une valeur par défaut correspondant à la maquette.
   Les champs ACF m'ont aussi permis de tester si les blocs réagissaient correctement aux différentes longueurs de texte qu'un admin rentrerait.
 
-- Animations
+- Animations :
   Une fois toutes les versions statiques intégrées, je me suis plongé dans les animations, que j’ai réalisées avec GSAP. Ce sont des animations que j’ai trouvées directement sur le site GSAP et adaptées à la page.
   Je voulais qu’elles restent légères : elles durent 1.5s avec un ease: 'cubic.out'.
   Toutes les animations sont regroupées dans un seul fichier : animations.js.
