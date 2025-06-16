@@ -9,7 +9,8 @@ Thème WordPress personnalisé à partir d'une maquette Figma pour test techniqu
 - WordPress
 - ACF
 - SCSS avec Vite.js
-- JS (GSAP possible)
+- JS
+- GSAP
 - Git
 
 ## Installation
