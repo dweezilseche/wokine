@@ -1,7 +1,7 @@
 <?php
   // Image de fond depuis ACF ou image par défaut
   $bg = get_field('image_hero');
-  $default_bg = get_template_directory_uri() . '/assets/images/hero.png';
+  $default_bg = get_template_directory_uri() . '/assets/images/hero.webp';
   $bg_url = $bg ? $bg : $default_bg;
 
   // Logo

@@ -18,7 +18,7 @@
   <div class="product-card product-scroll">
     <div class="img-product">
       <span class="badge">nouveauté</span>
-      <img src="<?= $image ? esc_url($image['url']) : get_template_directory_uri() . "/assets/images/shoes-{$i}.png"; ?>" alt="<?= esc_attr($image['alt'] ?? "Produit {$i}"); ?>">
+      <img src="<?= $image ? esc_url($image['url']) : get_template_directory_uri() . "/assets/images/shoes-{$i}.webp"; ?>" alt="<?= esc_attr($image['alt'] ?? "Produit {$i}"); ?>">
     </div>
     <div class="product-description">
       <h3 class="product-card__title split-scroll split-hover"><?= $titre ?: "Vehicula dapibus"; ?></h3>

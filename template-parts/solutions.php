@@ -102,7 +102,7 @@
 
       <?php
         $img_bg_second_bloc = get_field('img_bg_second_bloc');
-        $default_img_bg_second_bloc = get_template_directory_uri() . '/assets/images/img-card.png';
+        $default_img_bg_second_bloc = get_template_directory_uri() . '/assets/images/img-card.webp';
 
         $title_second_bloc = get_field('title_second_bloc');
         $text_btn_second_bloc = get_field('text_btn_second_bloc');
