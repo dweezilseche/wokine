@@ -103,11 +103,6 @@
           flex-direction: column;
           justify-content: space-between;
           height: 100%;
-
-          &.btn {
-            display: inline-grid;
-            overflow: hidden;
-          }
         }
 
         a {
@@ -116,16 +111,21 @@
           text-decoration: none;
           font-weight: 700;
           border-bottom: 1px solid $white;
-          padding: 4px 0;
+          padding: 10px 0;
           // position: absolute;
           // bottom: 40px;
           // left: 40px;
-          display: inline-flex;
-          align-items: center;
-          justify-content: space-between;
+          display: inline-grid;
+          grid-template-columns: auto auto;
+          gap: 8px;
           z-index: 1;
-          width: 80px;
+          width: 90px;
           flex-shrink: 0;
+          overflow: hidden;
+
+          span {
+            line-height: 15px;
+          }
 
           svg {
             stroke: $white;
